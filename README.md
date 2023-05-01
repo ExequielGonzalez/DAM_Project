@@ -16,7 +16,7 @@ cd frontend
 npm i
 ```
 
-luego jecutar el siguiente comando desde el directorio raiz:
+luego ejecutar el siguiente comando desde el directorio raiz:
 
 ```
 docker-compose up
