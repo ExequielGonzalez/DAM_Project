@@ -6,11 +6,23 @@ El trabajo está realizado en el entorno Docker y está hecho a partir del repos
 
 ## Correr el proyecto
 
-para correr el proyecto se debe ejecutar el siguiente comando:
+para correr el proyecto se debe hacer lo siguiente:
+
+```
+cd frontend
+```
+
+```
+npm i
+```
+
+luego jecutar el siguiente comando desde el directorio raiz:
 
 ```
 docker-compose up
 ```
+
+Desconozco el motivo por el cual el archivo node_modules del frontend no se crea por si solo.
 
 
 ## Proyecto basado en
