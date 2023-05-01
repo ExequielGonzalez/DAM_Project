@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/">
+        <ion-icon name="home"></ion-icon>
+      <!-- <ion-button click= backPage()>
+        <ion-icon name="caret-back-outline"></ion-icon> -->
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Logs para EV: {{this.electrovalvulaId}}</ion-title>
+    <!-- <ion-buttons slot="end">
+      <ion-button routerLink="/">
+        <ion-icon name="home"></ion-icon>
+      </ion-button>
+    </ion-buttons> -->
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="!this.onError">
+  <ion-grid class="ion-text-center">
+    <ion-row class="header-row">
+      <ion-col>
+        <ion-text>Fecha</ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text> Estado </ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngFor="let lg of this.logs" appResaltar>
+      <ion-col>
+        <ion-text>
+          {{lg.fecha  | date:'medium'}}
+        </ion-text>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          {{lg.apertura | abiertaCerrada}}
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-content *ngIf="this.onError">
+  <h2 style="text-align: center;"> Oh no!, error leyendo datos</h2>
+  <br>
+  
+  <ion-button expand="block" shape="round"  routerLink="/home">
+    <p>volver al home</p>
+  </ion-button>
+</ion-content>

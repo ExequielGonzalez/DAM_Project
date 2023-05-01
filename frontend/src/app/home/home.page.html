@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title> Sistema de riego </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-list-header> Dispositivos: </ion-list-header>
+
+    <ion-item *ngFor="let disp of listadoDispositivo" routerLink="/dispositivo/{{disp.dispositivoId}}">
+      <ion-icon slot="start" name="thermometer"></ion-icon>
+
+      <ion-label>
+        <h2>{{disp.nombre}}</h2>
+        <h3>
+          <ion-icon name="location"></ion-icon>
+          {{disp.ubicacion}}
+        </h3>
+      </ion-label>
+      <ion-icon name="caret-forward-outline"></ion-icon>
+    </ion-item>
+  </ion-list>
+</ion-content>
